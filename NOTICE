@@ -1,0 +1,15 @@
+mRNA is distributed under the Apache License, Version 2.0.
+
+The historical human and mouse annotation tables under src/mRNA/_data were
+preserved from atopos 1.0.0, commit bc81127, copyright BioQuest / ScienceAdvances.
+The original atopos source backup and Apache license are located in the sibling
+atopos repository. No third-party statistical backend source is vendored.
+
+The archived filenames identify h38_gene_info_v43 and m39_gene_info_v32. Their
+original gene-length derivation and full annotation provenance were undocumented.
+They are exposed explicitly as legacy references, not current or certified
+effective-length annotations. Users may supply their own versioned references.
+
+Analysis dependencies retain their own licenses. Cite the original limma,
+DESeq2, edgeR, GSEA/GSEApy and regulator-activity methods as applicable, together
+with the selected Python implementations and versions.

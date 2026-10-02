@@ -1,0 +1,13 @@
+,condition,batch
+sample_00,control,b1
+sample_01,control,b2
+sample_02,control,b1
+sample_03,control,b2
+sample_04,control,b1
+sample_05,control,b2
+sample_06,treated,b1
+sample_07,treated,b2
+sample_08,treated,b1
+sample_09,treated,b2
+sample_10,treated,b1
+sample_11,treated,b2

@@ -1,0 +1,4 @@
+,contrast
+Intercept,0
+batch[T.b2],0
+condition[T.treated],1

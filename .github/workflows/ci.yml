@@ -1,0 +1,24 @@
+name: tests
+on: [push, pull_request]
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.12', '3.13', '3.14']
+        installation: [core, complete]
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.2.0
+      - run: uv venv --python '${{ matrix.python }}'
+      - if: matrix.installation == 'core'
+        run: uv pip install -e '.[dev]'
+      - if: matrix.installation == 'complete'
+        run: uv pip install -e '.[all,dev]'
+      - run: uv run --no-project ruff check .
+      - run: uv run --no-project ruff format --check .
+      - run: uv run --no-project python -m pytest -q
+        env:
+          MPLBACKEND: Agg
+      - run: uv run --no-project python -m build
